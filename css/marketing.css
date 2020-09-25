@@ -23,6 +23,13 @@ a {
     background-color: transparent
 }
 
+.dots--vertical {
+    top: 100%;
+    left: 50%;
+    margin-left: 5px;
+    transform-origin: 0 0;
+    transform:rotate(90deg)
+}
 
 
 .img-d2c{
@@ -894,6 +901,44 @@ img {
     transition: transform .1s, -webkit-transform .1s
 }
 
+.dots {
+    width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height:0
+}
+
+.dots__dot {
+    width: 5px;
+    height: 5px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 99px;
+    background-color: #000;
+    -webkit-animation: moveInOutX .3s linear infinite;
+    animation:moveInOutX .3s linear infinite
+}
+
+@-webkit-keyframes moveInOutX {
+        0% {
+            transform:translateX(-10px)
+        }
+
+        to {
+            transform:translateX(10px)
+        }
+    }
+
+    @keyframes moveInOutX {
+        0% {
+            transform:translateX(-10px)
+        }
+
+        to {
+            transform:translateX(10px)
+        }
+    }
+
 @media (min-width:640px) {
     .sm\:inline-block {
         display: inline-block
@@ -958,6 +1003,16 @@ img {
         width: 50%
     }
 }
+
+@media (max-width: 850px) {
+        .hide-for-small {
+            display:none !important
+        }
+
+        .show-for-small {
+            display:inherit
+        }
+    }
 
 @media (min-width:768px) {
     .md\:rounded-xl {
